@@ -1,0 +1,24 @@
+version: '3.9'
+services:
+  app:
+    image: doelia/aquaponeyclub:main
+    ports:
+    - "9095:80"
+    environment:
+      - VIRTUAL_HOST=aquaponeyclub.doelia.fr
+      - DATABASE_URL=postgresql://postgres:aquaponeyclub@db:5432/postgres
+      - PORT=80
+      - APP_KEY=eYmNeEQWelpKUeHcs3AKT_G5hBLR4bzK
+      - LOG_LEVEL=info
+      - SESSION_DRIVER=cookie
+      - HOST=0.0.0.0
+    restart: always
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: aquaponeyclub
+
+networks:
+  default:
+    name: http_public
+    external: true
