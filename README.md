@@ -2,6 +2,8 @@
 
 Site web fictif pour tester AdonisJS + Inertia
 
+Démo live : https://aquaponeyclub.doelia.fr/
+
 ## Stack
 - AdonisJS
 - PostgreSQL
